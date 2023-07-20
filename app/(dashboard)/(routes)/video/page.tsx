@@ -2,12 +2,11 @@
 
 import * as z from "zod";
 import axios from "axios";
-import { Music } from "lucide-react";
+import { Music, VideoIcon, VideoOff } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { ChatCompletionRequestMessage } from "openai";
 
 import Heading from "@/components/Heading";
 import { Button } from "@/components/ui/button";
@@ -20,10 +19,10 @@ import { Empty } from "@/components/empty";
 
 import { fromSchema } from "./constants";
 
-const MusicPage = () => {
+const VideoPage = () => {
   const router = useRouter();
   // const proModal = useProModal();
-  const [music, setMusic] = useState<string>();
+  const [video, setVideo] = useState<string>();
 
   const form = useForm<z.infer<typeof fromSchema>>({
     resolver: zodResolver(fromSchema),
@@ -36,11 +35,11 @@ const MusicPage = () => {
 
   const onSubmit = async (values: z.infer<typeof fromSchema>) => {
     try {
-      setMusic(undefined);
+      setVideo(undefined);
 
-      const response = await axios.post("/api/music", values);
+      const response = await axios.post("/api/video", values);
 
-      setMusic(response.data.audio);
+      setVideo(response.data[0]);
 
       form.reset();
     } catch (error: any) {
@@ -116,11 +115,11 @@ const MusicPage = () => {
   return (
     <div>
       <Heading
-        title="Music Generation"
-        description="Turn your music into prompts"
-        icon={Music}
-        iconColor="text-green-500"
-        bgColor="bg-green-500/10"
+        title="Video Generation"
+        description="Turn your prompt into Video"
+        icon={VideoIcon}
+        iconColor="text-orange-700"
+        bgColor="bg-orange-700/10"
       />
       <div className="px-4 lg:px-8">
         <div>
@@ -153,7 +152,7 @@ const MusicPage = () => {
                         //     ? placeHolder
                         //     : "Start Conversation"
                         // }
-                        placeholder="Pano solo"
+                        placeholder="Clown fish swimming around a coral reef"
                         {...field}
                       />
                     </FormControl>
@@ -177,14 +176,21 @@ const MusicPage = () => {
               <Loader />
             </div>
           )}
-          {!music && !isLoading && (
-            <Empty label="No Music" icon={Music} iconColor="text-green-500" />
+          {!video && !isLoading && (
+            <Empty
+              label="No Video"
+              icon={VideoOff}
+              iconColor="text-orange-700"
+            />
           )}
 
-          {music && (
-            <audio controls className="w-full mt-8">
-              <source src={music} />
-            </audio>
+          {video && (
+            <video
+              controls
+              className="w-full mt-8 aspect-video rounded-lg border bg-black/10"
+            >
+              <source src={video} />
+            </video>
           )}
         </div>
       </div>
@@ -192,4 +198,4 @@ const MusicPage = () => {
   );
 };
 
-export default MusicPage;
+export default VideoPage;
