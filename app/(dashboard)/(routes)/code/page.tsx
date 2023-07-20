@@ -2,7 +2,7 @@
 
 import * as z from "zod";
 import axios from "axios";
-import { MessageSquare, MessageSquareDashed } from "lucide-react";
+import { Code } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
@@ -22,8 +22,9 @@ import { Empty } from "@/components/empty";
 // import { useProModal } from "@/hooks/use-pro-modal";
 
 import { fromSchema } from "./constants";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
-const ConversationPage = () => {
+const CodePage = () => {
   const router = useRouter();
   // const proModal = useProModal();
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
@@ -45,7 +46,7 @@ const ConversationPage = () => {
       };
       const newMessages = [...messages, userMessage];
 
-      const response = await axios.post("/api/conversation", {
+      const response = await axios.post("/api/code", {
         messages: newMessages,
       });
       setMessages((current) => [...current, userMessage, response.data]);
@@ -124,11 +125,11 @@ const ConversationPage = () => {
   return (
     <div>
       <Heading
-        title="Conversation"
-        description="Our most advanced conversation model."
-        icon={MessageSquare}
-        iconColor="text-violet-500"
-        bgColor="bg-violet-500/10"
+        title="Code Generation"
+        description="Generate Code using descriptive text."
+        icon={Code}
+        iconColor="text-emerald-700"
+        bgColor="bg-emerald-700/10"
       />
       <div className="px-4 lg:px-8">
         <div>
@@ -161,7 +162,7 @@ const ConversationPage = () => {
                         //     ? placeHolder
                         //     : "Start Conversation"
                         // }
-                        placeholder="Start Conversation"
+                        placeholder="Generate Code"
                         {...field}
                       />
                     </FormControl>
@@ -188,8 +189,8 @@ const ConversationPage = () => {
           {messages.length === 0 && !isLoading && (
             <Empty
               label="No conversation started."
-              icon={MessageSquareDashed}
-              iconColor="text-violet-500"
+              icon={Code}
+              iconColor="text-emerald-700"
             />
           )}
           <div className="flex flex-col-reverse gap-y-4">
@@ -206,7 +207,25 @@ const ConversationPage = () => {
                   )}
                 >
                   {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-                  <p className="text-sm">{message.content}</p>
+
+                  <ReactMarkdown
+                    components={{
+                      pre: ({ node, ...props }) => (
+                        <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
+                          <pre {...props} />
+                        </div>
+                      ),
+                      code: ({ node, ...props }) => (
+                        <code
+                          className="bg-black/10 rounded-lg p-1"
+                          {...props}
+                        />
+                      ),
+                    }}
+                    className="text-sm overflow-hidden leading-7"
+                  >
+                    {message.content || ""}
+                  </ReactMarkdown>
                 </div>
               ))
               .reverse()}
@@ -217,4 +236,4 @@ const ConversationPage = () => {
   );
 };
 
-export default ConversationPage;
+export default CodePage;

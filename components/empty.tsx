@@ -1,20 +1,22 @@
 import { cn } from "@/lib/utils";
-import { MessageSquareDashed } from "lucide-react";
+import { LucideIcon, MessageSquareDashed } from "lucide-react";
 import Image from "next/image";
 
 interface EmptyProps {
   label: string;
+  icon: LucideIcon;
+  iconColor?: string;
 }
 
-export const Empty = ({ label }: EmptyProps) => {
+export const Empty = ({ label, icon: Icon, iconColor }: EmptyProps) => {
   return (
     <div className="h-full p-20 flex flex-col items-center justify-center">
-      {/* <div className="relative h-72 w-72 "> */}
-      {/* <Image src="/empty.svg" fill alt="Empty" /> */}
-      <MessageSquareDashed
-        className={cn("h-52 w-52 mr-3 text-purple-200 opacity-25")}
-      />
-      {/* </div> */}
+      <div className={cn("relative rounded-md")}>
+        {/* <Image src="/empty.svg" fill alt="Empty" /> */}
+        <Icon
+          className={cn("h-52 w-52 mr-3 text-purple-200 opacity-25", iconColor)}
+        />
+      </div>
       <p className="text-muted-foreground text-sm text-center">{label}</p>
     </div>
   );
