@@ -227,8 +227,7 @@ const CodePage = () => {
                     {message.content || ""}
                   </ReactMarkdown>
                 </div>
-              ))
-              .reverse()}
+              ))}
           </div>
         </div>
       </div>

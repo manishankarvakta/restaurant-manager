@@ -2,7 +2,7 @@
 
 import * as z from "zod";
 import axios from "axios";
-import { Music, VideoIcon, VideoOff } from "lucide-react";
+import { VideoIcon, VideoOff } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
