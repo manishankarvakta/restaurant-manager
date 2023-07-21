@@ -1,9 +1,15 @@
-import React from "react";
+import { LandingNavbar } from "@/components/landing-navbar";
+import { LandingHero } from "@/components/landing-hero";
+import { LandingContent } from "@/components/landing-content";
 
-type Props = {};
-
-const page = (props: Props) => {
-  return <div>Landing Page</div>;
+const LandingPage = () => {
+  return (
+    <div className="h-full ">
+      <LandingNavbar />
+      <LandingHero />
+      <LandingContent />
+    </div>
+  );
 };
 
-export default page;
+export default LandingPage;
