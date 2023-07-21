@@ -22,14 +22,14 @@ import { Empty } from "@/components/empty";
 // import { useProModal } from "@/hooks/use-pro-modal";
 
 import { amountOptions, fromSchema, resolutionOptions } from "./constants";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Select, SelectContent, SelectItem } from "@/components/ui/select";
 import { SelectTrigger, SelectValue } from "@radix-ui/react-select";
 import { Card, CardFooter } from "@/components/ui/card";
+import { useProModal } from "@/hooks/use-pro-modal";
 
 const ImagePage = () => {
   const router = useRouter();
-  // const proModal = useProModal();
+  const proModal = useProModal();
 
   const [images, setImages] = useState<string[]>([]);
 
@@ -54,7 +54,9 @@ const ImagePage = () => {
       setImages(urls);
       form.reset();
     } catch (error: any) {
-      console.log(error);
+      if (error?.response?.status === 403) {
+        proModal.onOpen();
+      }
     } finally {
       router.refresh();
     }

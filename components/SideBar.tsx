@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { FreeCounter } from "./FreeCounter";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -65,7 +66,11 @@ const routes = [
   },
 ];
 
-const SideBar = () => {
+interface SideBarProps {
+  apiLimitCount: number;
+}
+
+const SideBar = ({ apiLimitCount = 0 }: SideBarProps) => {
   const pathname = usePathname();
   return (
     <div className="space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white">
@@ -80,7 +85,10 @@ const SideBar = () => {
               poppins.className
             )}
           >
-            <span className="text-orange-700">Octopus</span> AI
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+              Octopus
+            </span>{" "}
+            AI
           </h1>
           {/* <h1
               className={cn(
@@ -111,6 +119,7 @@ const SideBar = () => {
           ))}
         </div>
       </div>
+      <FreeCounter apiLimitCount={apiLimitCount} />
     </div>
   );
 };

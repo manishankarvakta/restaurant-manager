@@ -2,13 +2,13 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
 import MobileSideBar from "@/components/MobileSideBar";
+import { getApiLimitCount } from "@/lib/api-limit";
 
-type Props = {};
-
-const NavBar = (props: Props) => {
+const NavBar = async () => {
+  const apiLimitCount = await getApiLimitCount();
   return (
     <div className="flex item-center p-4">
-      <MobileSideBar />
+      <MobileSideBar apiLimitCount={apiLimitCount} />
       <div className="flex w-full justify-end">
         <UserButton afterSignOutUrl="/" />
       </div>
