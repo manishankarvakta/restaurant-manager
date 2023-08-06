@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { navigationRoute } from "@/lib/data";
 import {
   Code,
   Settings,
@@ -101,7 +102,7 @@ const SideBar = ({ apiLimitCount = 0, isPro = false }: SideBarProps) => {
             </h1> */}
         </Link>
         <div className="space-y-1">
-          {routes.map((route) => (
+          {navigationRoute.map((route) => (
             <Link
               href={route.href}
               key={route.href}
@@ -120,7 +121,7 @@ const SideBar = ({ apiLimitCount = 0, isPro = false }: SideBarProps) => {
           ))}
         </div>
       </div>
-      <FreeCounter apiLimitCount={apiLimitCount} isPro={isPro} />
+      {/* <FreeCounter apiLimitCount={apiLimitCount} isPro={isPro} /> */}
     </div>
   );
 };
