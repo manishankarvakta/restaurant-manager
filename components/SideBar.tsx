@@ -15,6 +15,7 @@ import {
   Music,
   LayoutDashboard,
   MessageSquare,
+  ChefHat,
 } from "lucide-react";
 
 const poppins = Poppins({
@@ -78,19 +79,20 @@ const SideBar = ({ apiLimitCount = 0, isPro = false }: SideBarProps) => {
     <div className="space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white">
       <div className="flex-1 px-3 py-2">
         <Link href="/dashboard" className="flex items-center pl-3 mb-14">
-          <div className="h-8 w-8 relative mr-5">
-            <Image fill alt="logo" className="h-8 w-8" src="/octopus.png" />
+          <div className="h-14 w-14 relative mr-2">
+            {/* <Image fill alt="logo" className="h-8 w-8" src="/octopus.png" /> */}
+            <ChefHat className={cn("h-14 w-14 mr-2")} />
           </div>
           <h1
             className={cn(
-              "text-2xl fot-bold text-gray-200 text-center",
+              "text-2xl fot-bold text-gray-200 text-left ml-2",
               poppins.className
             )}
           >
-            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-              Octopus
+            <span className="font-extrabold line-0 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+              RESTAURANT
             </span>{" "}
-            AI
+            <span className="font-bold text-xl line-0">Manager</span>
           </h1>
           {/* <h1
               className={cn(
