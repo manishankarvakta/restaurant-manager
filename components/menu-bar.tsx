@@ -6,6 +6,9 @@ import {
   MenubarMenu,
   MenubarSeparator,
   MenubarShortcut,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { navigationRoute } from "@/lib/data";
@@ -22,7 +25,7 @@ const MenuBar = (props: Props) => {
               route.isFileMenu === true && (
                 <MenubarMenu>
                   <MenubarTrigger>
-                    {/* {<route.icon className="mr-2 h-4 w-4" />} */}
+                    {<route.icon className="mr-2 h-4 w-4" />}
                     {route.label}
                   </MenubarTrigger>
                   <MenubarContent>
@@ -31,10 +34,31 @@ const MenuBar = (props: Props) => {
                         return sub.href === "divider" ? (
                           <MenubarSeparator key={sub.label} />
                         ) : (
+                            sub?.subMenu?.length > 0 ?
+                              <>
+                                <MenubarSub>
+                                  <MenubarSubTrigger>
+                                    <sub.icon className="mr-2 h-4 w-4" />
+                                    {sub.label}
+                                  </MenubarSubTrigger>
+                                  <MenubarSubContent>
+                                    {
+                                      sub?.subMenu?.map((subm)=>(
+                                        
+                                        <MenubarItem>
+                                          <subm.icon className="mr-2 h-4 w-4" />
+                                          {subm.label}
+                                        </MenubarItem>
+                                      ))
+                                    }
+                                    
+                                  </MenubarSubContent>
+                                </MenubarSub>
+                              </>
+                            :
                           <MenubarItem key={sub.label}>
-                            {/* {<route.icon className="mr-2 h-4 w-4" />} */}
-                            {sub.label}
-                            {/* <MenubarShortcut>⌘T</MenubarShortcut> */}
+                            {<sub.icon className="mr-2 h-4 w-4" />}
+                              {sub.label}
                           </MenubarItem>
                         );
                       })}
