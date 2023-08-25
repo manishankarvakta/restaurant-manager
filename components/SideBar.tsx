@@ -24,50 +24,6 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-const routes = [
-  {
-    label: "Dashboard",
-    icon: LayoutDashboard,
-    href: "/dashboard",
-    color: "text-sky-500",
-  },
-  {
-    label: "Conversation",
-    icon: MessageSquare,
-    href: "/conversation",
-    color: "text-violet-500",
-  },
-  {
-    label: "Image Generation",
-    icon: ImageIcon,
-    href: "/image",
-    color: "text-pink-700",
-  },
-  {
-    label: "Video Generation",
-    icon: VideoIcon,
-    href: "/video",
-    color: "text-orange-700",
-  },
-  {
-    label: "Music Generation",
-    icon: Music,
-    href: "/music",
-    color: "text-emerald-500",
-  },
-  {
-    label: "Code Generation",
-    icon: Code,
-    href: "/code",
-    color: "text-emerald-500",
-  },
-  {
-    label: "Settings",
-    icon: Settings,
-    href: "/settings",
-  },
-];
-
 interface SideBarProps {
   apiLimitCount: number;
   isPro: boolean;
@@ -94,14 +50,6 @@ const SideBar = ({ apiLimitCount = 0, isPro = false }: SideBarProps) => {
             </span>{" "}
             <span className="font-bold text-xl line-0">Manager</span>
           </h1>
-          {/* <h1
-              className={cn(
-                "text-2xl fot-bold text-gray-200 text-center",
-                poppins.className
-              )}
-            >
-              tech<span className="text-sky-500">soul</span> AI
-            </h1> */}
         </Link>
         <div className="space-y-1">
           {navigationRoute.map((route) => (
@@ -123,7 +71,6 @@ const SideBar = ({ apiLimitCount = 0, isPro = false }: SideBarProps) => {
           ))}
         </div>
       </div>
-      {/* <FreeCounter apiLimitCount={apiLimitCount} isPro={isPro} /> */}
     </div>
   );
 };

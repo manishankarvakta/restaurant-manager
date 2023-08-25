@@ -40,102 +40,105 @@ import {
   SquareStack,
 } from "lucide-react";
 
-
 export const navigationRoute = [
   {
     label: "Dashboard",
     icon: LayoutDashboard,
     href: "/dashboard",
     color: "text-violet-500",
+    bgColor: "text-violet-500/10",
     isFileMenu: false,
   },
   {
     label: "Procurements",
     icon: ShoppingCart,
-    href: "/purchase",
+    href: "/procurements",
     color: "text-pink-700",
+    bgColor: "text-pink-700/10",
     isFileMenu: true,
     subMenu: [
-   
       {
         label: "Ingredients",
         icon: Carrot,
         href: "/ingredients",
         color: "text-pink-700",
+        bgColor: "text-pink-700/10",
         isFileMenu: true,
         subMenu: [
-           {
+          {
             label: "Ingredients List",
             icon: LayoutList,
-            href: "/category",
+            href: "/ingredients",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-           {
+          {
             label: "Category",
             icon: Package2Icon,
-            href: "/category",
+            href: "/ingredients/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
 
           {
             label: "Sub Category",
             icon: Package,
-            href: "/sub-category",
+            href: "/ingredients/sub-category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
           {
             label: "Size",
             icon: PencilRuler,
-            href: "/size",
+            href: "/ingredients/size",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
           {
             label: "Unit",
             icon: SquareStack,
-            href: "/unit",
+            href: "/ingredients/unit",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
           {
             label: "Brand",
             icon: BadgeCheck,
-            href: "/brand",
+            href: "/ingredients/brand",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-        ]
+        ],
       },
-     
-      {
-        label: "Divider",
-        icon: ShoppingCart,
-        href: "divider",
-        color: "text-pink-700",
-        isFileMenu: true,
-      },
+
       {
         label: "Purchase",
         icon: ShoppingCart,
         href: "/purchase",
         color: "text-pink-700",
+        bgColor: "text-pink-700/10",
         isFileMenu: true,
         subMenu: [
-           {
+          {
             label: "All Purchase",
             icon: LayoutList,
             href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-           {
+          {
             label: "New Purchase",
             icon: FilePlus2,
             href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
 
@@ -144,36 +147,34 @@ export const navigationRoute = [
             icon: PieChart,
             href: "/sub-category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
         ],
       },
-      {
-        label: "Divider",
-        icon: ShoppingCart,
-        href: "divider",
-        color: "text-pink-700",
-        isFileMenu: true,
-      },
+
       {
         label: "Grn",
         icon: ScrollText,
         href: "/grn",
         color: "text-pink-700",
+        bgColor: "text-pink-700/10",
         isFileMenu: true,
         subMenu: [
-           {
+          {
             label: "All GRN",
             icon: LayoutList,
             href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-           {
+          {
             label: "New GRN",
             icon: FilePlus2,
             href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
 
@@ -182,36 +183,34 @@ export const navigationRoute = [
             icon: PieChart,
             href: "/sub-category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
         ],
       },
-      {
-        label: "Divider",
-        icon: ShoppingCart,
-        href: "divider",
-        color: "text-pink-700",
-        isFileMenu: true,
-      },
+
       {
         label: "RTV",
         icon: Undo2,
         href: "/rtv",
         color: "text-pink-700",
+        bgColor: "text-pink-700/10",
         isFileMenu: true,
-         subMenu: [
-           {
+        subMenu: [
+          {
             label: "All RTV",
             icon: LayoutList,
             href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-           {
+          {
             label: "New RTV",
             icon: FilePlus2,
             href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
 
@@ -220,22 +219,18 @@ export const navigationRoute = [
             icon: PieChart,
             href: "/sub-category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
         ],
       },
-      {
-        label: "Divider",
-        icon: ShoppingCart,
-        href: "divider",
-        color: "text-pink-700",
-        isFileMenu: true,
-      },
+
       {
         label: "Supplier",
         icon: User2,
         href: "/supplier",
         color: "text-pink-700",
+        bgColor: "text-pink-700/10",
         isFileMenu: true,
       },
     ],
@@ -245,6 +240,7 @@ export const navigationRoute = [
     icon: Soup,
     href: "/menu",
     color: "text-orange-700",
+    bgColor: "text-orange-700/10",
     isFileMenu: true,
     subMenu: [
       {
@@ -252,50 +248,57 @@ export const navigationRoute = [
         icon: BookOpen,
         href: "/purchase",
         color: "text-pink-700",
+        bgColor: "text-pink-700/10",
         isFileMenu: true,
         subMenu: [
-           {
+          {
             label: "Menu Items",
             icon: LayoutList,
             href: "/purchase",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-           {
+          {
             label: "Category",
             icon: Package,
             href: "/purchase",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-           {
+          {
             label: "Sub Category",
             icon: Boxes,
             href: "/purchase",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-        ]
+        ],
       },
       {
         label: "Orders",
         icon: FileText,
         href: "/purchase",
         color: "text-pink-700",
+        bgColor: "text-pink-700/10",
         isFileMenu: true,
         subMenu: [
-           {
+          {
             label: "All Orders",
             icon: LayoutList,
             href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-           {
+          {
             label: "New Order",
             icon: FilePlus2,
             href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
 
@@ -304,6 +307,7 @@ export const navigationRoute = [
             icon: PieChart,
             href: "/sub-category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
         ],
@@ -315,6 +319,7 @@ export const navigationRoute = [
     icon: Container,
     href: "/booking",
     color: "text-sky-500",
+    bgColor: "text-sky-500/10",
     isFileMenu: true,
     subMenu: [
       {
@@ -322,20 +327,23 @@ export const navigationRoute = [
         icon: FileText,
         href: "/purchase",
         color: "text-pink-700",
+        bgColor: "text-pink-700/10",
         isFileMenu: true,
         subMenu: [
-           {
+          {
             label: "All Bookings",
             icon: LayoutList,
             href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-           {
+          {
             label: "New Booking",
             icon: FilePlus2,
             href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
 
@@ -344,6 +352,7 @@ export const navigationRoute = [
             icon: PieChart,
             href: "/sub-category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
         ],
@@ -353,176 +362,198 @@ export const navigationRoute = [
         icon: BookOpen,
         href: "/purchase",
         color: "text-pink-700",
+        bgColor: "text-pink-700/10",
         isFileMenu: true,
-       
       },
       {
         label: "Table",
         icon: FileText,
         href: "/purchase",
         color: "text-pink-700",
+        bgColor: "text-pink-700/10",
         isFileMenu: true,
       },
-    ]
+    ],
   },
   {
     label: "Accounts",
     icon: Calculator,
     href: "/accounts",
     color: "text-green-500",
+    bgColor: "text-green-500/10",
     isFileMenu: true,
     subMenu: [
-              {
-              label: "Incomes",
-              icon: BookPlus,
-              href: "/purchase",
-              color: "text-pink-700",
-              isFileMenu: true,
-            },
-            {
-              label: "Expences",
-              icon: FileMinus,
-              href: "/purchase",
-              color: "text-pink-700",
-              isFileMenu: true,
-            },
+      {
+        label: "Incomes",
+        icon: BookPlus,
+        href: "/purchase",
+        color: "text-pink-700",
+        bgColor: "text-pink-700/10",
+        isFileMenu: true,
+      },
+      {
+        label: "Expences",
+        icon: FileMinus,
+        href: "/purchase",
+        color: "text-pink-700",
+        bgColor: "text-pink-700/10",
+        isFileMenu: true,
+      },
 
+      {
+        label: "Ledger",
+        icon: Book,
+        href: "/sub-category",
+        color: "text-pink-700",
+        bgColor: "text-pink-700/10",
+        isFileMenu: true,
+      },
+      {
+        label: "Setting",
+        icon: Cog,
+        href: "/accounts",
+        color: "text-green-500",
+        bgColor: "text-green-500/10",
+        isFileMenu: true,
+        subMenu: [
           {
-            label: "Ledger",
-            icon: Book,
-            href: "/sub-category",
+            label: "Accounts Head",
+            icon: Wallet2,
+            href: "/purchase",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
           {
-              label: "Setting",
-              icon: Cog,
-              href: "/accounts",
-              color: "text-green-500",
-              isFileMenu: true,
-              subMenu: [
-                {
-                  label: "Accounts Head",
-                  icon: Wallet2,
-                  href: "/purchase",
-                  color: "text-pink-700",
-                  isFileMenu: true,
-                },
-                {
-                  label: "Bank",
-                  icon: Landmark,
-                  href: "/purchase",
-                  color: "text-pink-700",
-                  isFileMenu: true,
-                },
-                {
-                  label: "MFS",
-                  icon: SmartphoneCharging,
-                  href: "/purchase",
-                  color: "text-pink-700",
-                  isFileMenu: true,
-                },
-              ],
-      },
-          {
-            label: "Analytics",
-            icon: PieChart,
-            href: "/sub-category",
+            label: "Bank",
+            icon: Landmark,
+            href: "/purchase",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
+          },
+          {
+            label: "MFS",
+            icon: SmartphoneCharging,
+            href: "/purchase",
+            color: "text-pink-700",
+            bgColor: "text-pink-700/10",
+            isFileMenu: true,
+          },
+        ],
       },
-        ]
+      {
+        label: "Analytics",
+        icon: PieChart,
+        href: "/sub-category",
+        color: "text-pink-700",
+        bgColor: "text-pink-700/10",
+        isFileMenu: true,
+      },
+    ],
   },
   {
     label: "Inventory",
     icon: ArchiveIcon,
     href: "/inventory",
     color: "text-purple-500",
+    bgColor: "text-purple-500/10",
     isFileMenu: true,
     subMenu: [
-           {
-            label: "All Inventories",
+      {
+        label: "All Inventories",
+        icon: LayoutList,
+        href: "/purchase",
+        color: "text-pink-700",
+        bgColor: "text-pink-700/10",
+        isFileMenu: true,
+      },
+      {
+        label: "Damage",
+        icon: Trash2,
+        href: "/purchase",
+        color: "text-pink-700",
+        bgColor: "text-pink-700/10",
+        isFileMenu: true,
+        subMenu: [
+          {
+            label: "All Damage",
             icon: LayoutList,
-            href: "/purchase",
+            href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-           {
-            label: "Damage",
-            icon: Trash2,
-            href: "/purchase",
+          {
+            label: "New Damage",
+            icon: FilePlus2,
+            href: "/category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
-            subMenu: [
-                      {
-                        label: "All Damage",
-                        icon: LayoutList,
-                        href: "/category",
-                        color: "text-pink-700",
-                        isFileMenu: true,
-                      },
-                      {
-                        label: "New Damage",
-                        icon: FilePlus2,
-                        href: "/category",
-                        color: "text-pink-700",
-                        isFileMenu: true,
-                      },
-
-                      {
-                        label: "Analytics",
-                        icon: PieChart,
-                        href: "/sub-category",
-                        color: "text-pink-700",
-                        isFileMenu: true,
-                      },
-                    ],
           },
-           {
-            label: "Adjustment",
-            icon: SlidersHorizontal,
-            href: "/purchase",
-            color: "text-pink-700",
-            subMenu: [
-                  {
-                    label: "All Adjustment",
-                    icon: LayoutList,
-                    href: "/category",
-                    color: "text-pink-700",
-                    isFileMenu: true,
-                  },
-                  {
-                    label: "New Adjustment",
-                    icon: FilePlus2,
-                    href: "/category",
-                    color: "text-pink-700",
-                    isFileMenu: true,
-                  },
 
-                  {
-                    label: "Analytics",
-                    icon: PieChart,
-                    href: "/sub-category",
-                    color: "text-pink-700",
-                    isFileMenu: true,
-                  },
-                ],
-             isFileMenu: true,
-            },
-            {
+          {
             label: "Analytics",
             icon: PieChart,
             href: "/sub-category",
             color: "text-pink-700",
+            bgColor: "text-pink-700/10",
             isFileMenu: true,
           },
-        ]
+        ],
+      },
+      {
+        label: "Adjustment",
+        icon: SlidersHorizontal,
+        href: "/purchase",
+        color: "text-pink-700",
+        bgColor: "text-pink-700/10",
+        subMenu: [
+          {
+            label: "All Adjustment",
+            icon: LayoutList,
+            href: "/category",
+            color: "text-pink-700",
+            bgColor: "text-pink-700/10",
+            isFileMenu: true,
+          },
+          {
+            label: "New Adjustment",
+            icon: FilePlus2,
+            href: "/category",
+            color: "text-pink-700",
+            bgColor: "text-pink-700/10",
+            isFileMenu: true,
+          },
+
+          {
+            label: "Analytics",
+            icon: PieChart,
+            href: "/sub-category",
+            color: "text-pink-700",
+            bgColor: "text-pink-700/10",
+            isFileMenu: true,
+          },
+        ],
+        isFileMenu: true,
+      },
+      {
+        label: "Analytics",
+        icon: PieChart,
+        href: "/sub-category",
+        color: "text-pink-700",
+        bgColor: "text-pink-700/10",
+        isFileMenu: true,
+      },
+    ],
   },
   {
     label: "Reports",
     icon: LineChart,
     href: "/reports",
     color: "text-pink-500",
+    bgColor: "text-pink-500/10",
     isFileMenu: false,
   },
   {
@@ -530,6 +561,7 @@ export const navigationRoute = [
     icon: User,
     href: "/user",
     color: "text-emerald-500",
+    bgColor: "text-emerald-500/10",
     isFileMenu: false,
   },
   {
@@ -537,22 +569,25 @@ export const navigationRoute = [
     icon: Settings,
     href: "/settings",
     color: "text-zinc-200",
+    bgColor: "text-zinc-200/10",
     isFileMenu: false,
     subMenu: [
-           {
-            label: "App Setting",
-            icon: FolderCog,
-            href: "/purchase",
-            color: "text-pink-700",
-            isFileMenu: true,
-          },
-           {
-            label: "Profile Setting",
-            icon: UserCog,
-            href: "/purchase",
-            color: "text-pink-700",
-            isFileMenu: true,
-          },
-        ]
+      {
+        label: "App Setting",
+        icon: FolderCog,
+        href: "/purchase",
+        color: "text-pink-700",
+        bgColor: "text-pink-700/10",
+        isFileMenu: true,
+      },
+      {
+        label: "Profile Setting",
+        icon: UserCog,
+        href: "/purchase",
+        color: "text-pink-700",
+        bgColor: "text-pink-700/10",
+        isFileMenu: true,
+      },
+    ],
   },
 ];
