@@ -246,7 +246,7 @@ export const navigationRoute = [
       {
         label: "Menu",
         icon: BookOpen,
-        href: "/purchase",
+        href: "/menu/menu-items",
         color: "text-pink-700",
         bgColor: "text-pink-700/10",
         isFileMenu: true,
@@ -254,7 +254,7 @@ export const navigationRoute = [
           {
             label: "Menu Items",
             icon: LayoutList,
-            href: "/purchase",
+            href: "/menu/menu-items",
             color: "text-pink-700",
             bgColor: "text-pink-700/10",
             isFileMenu: true,
@@ -262,7 +262,7 @@ export const navigationRoute = [
           {
             label: "Category",
             icon: Package,
-            href: "/purchase",
+            href: "/menu/menu-category",
             color: "text-pink-700",
             bgColor: "text-pink-700/10",
             isFileMenu: true,
@@ -270,7 +270,7 @@ export const navigationRoute = [
           {
             label: "Sub Category",
             icon: Boxes,
-            href: "/purchase",
+            href: "/menu/menu-sub-category",
             color: "text-pink-700",
             bgColor: "text-pink-700/10",
             isFileMenu: true,
@@ -280,7 +280,7 @@ export const navigationRoute = [
       {
         label: "Orders",
         icon: FileText,
-        href: "/purchase",
+        href: "/order",
         color: "text-pink-700",
         bgColor: "text-pink-700/10",
         isFileMenu: true,
@@ -288,7 +288,7 @@ export const navigationRoute = [
           {
             label: "All Orders",
             icon: LayoutList,
-            href: "/category",
+            href: "/order",
             color: "text-pink-700",
             bgColor: "text-pink-700/10",
             isFileMenu: true,
@@ -296,7 +296,7 @@ export const navigationRoute = [
           {
             label: "New Order",
             icon: FilePlus2,
-            href: "/category",
+            href: "/order/new-order",
             color: "text-pink-700",
             bgColor: "text-pink-700/10",
             isFileMenu: true,
@@ -305,7 +305,7 @@ export const navigationRoute = [
           {
             label: "Analytics",
             icon: PieChart,
-            href: "/sub-category",
+            href: "/order/sub-category",
             color: "text-pink-700",
             bgColor: "text-pink-700/10",
             isFileMenu: true,

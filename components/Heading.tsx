@@ -36,9 +36,9 @@ const Heading = ({
       </div>
       <div className="flex ">
         {existRoute?.subMenu?.map((route) => (
-          <Link href={route.href} className="flex items-center me-3">
-            <route.icon />
-            {route.label}
+          <Link href={route.href} className="flex items-center me-3 flex-col border-3">
+            <route.icon  className={cn("h-8 w-8", route.color)}/>
+            <span className="text-xs">{route.label}</span>
           </Link>
         ))}
       </div>
